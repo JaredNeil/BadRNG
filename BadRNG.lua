@@ -1,6 +1,7 @@
 local parser = ParserLib:GetInstance("1.1")
 
 local skills = {
+  -- "Rake", -- For testing
   "Heroic Strike",
   "Shield Slam",
   "Sunder Armor",
@@ -8,6 +9,7 @@ local skills = {
 }
 
 local tanks = {
+  -- ParserLib_SELF, -- For testing
   "Ahtia",
   "Sulg",
   "Henkebenke",
@@ -16,6 +18,7 @@ local tanks = {
 }
 
 local bosses = {
+  -- "Galak", -- For testing
   "Vaelastrasz",
   "Broodlord Lashlayer",
   "Chromagus"
@@ -32,8 +35,8 @@ end
 
 
 function BadRNG_OnLoad()
+  -- parser:RegisterEvent("BadRNG", "CHAT_MSG_SPELL_SELF_DAMAGE", ParserLib_OnEvent) -- For testing
   parser:RegisterEvent("BadRNG", "CHAT_MSG_SPELL_PARTY_DAMAGE", ParserLib_OnEvent)
-  -- parser:RegisterEvent("BadRNG", "CHAT_MSG_SPELL_SELF_DAMAGE", ParserLib_OnEvent)
 end
 
 function ParserLib_OnEvent(event, info)
@@ -48,6 +51,7 @@ function ParserLib_OnEvent(event, info)
         end
         if boss_match then
           -- Everything matches. Do what you want here.
+          SendChatMessage(arg1,"PARTY");
         end
       end
     end
