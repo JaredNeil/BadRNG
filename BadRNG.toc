@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: BadRNG
+## Notes: Notifies in chat when abilities miss.
+## Author: Zacru
+
+libs\ParserLib-1.1\ParserLib.lua
+
+BadRNG.xml
+BadRNG.lua
